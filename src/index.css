@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body {
+    @apply bg-gray-100 dark:bg-gray-900 transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .calculator-button {
+    @apply relative flex items-center justify-center rounded-full 
+           text-lg sm:text-xl font-medium cursor-pointer select-none
+           transition-all duration-150 active:scale-95
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400;
+  }
+  
+  .digit-button {
+    @apply calculator-button bg-gray-200/90 dark:bg-gray-700/90
+           text-gray-800 dark:text-white 
+           hover:bg-gray-300/90 dark:hover:bg-gray-600/90
+           active:bg-gray-400/90 dark:active:bg-gray-500/90;
+  }
+  
+  .operation-button {
+    @apply calculator-button bg-primary-500/90 dark:bg-primary-600/90
+           text-white
+           hover:bg-primary-600/90 dark:hover:bg-primary-500/90
+           active:bg-primary-700/90 dark:active:bg-primary-400/90;
+  }
+  
+  .function-button {
+    @apply calculator-button bg-secondary-200/90 dark:bg-secondary-700/90
+           text-secondary-800 dark:text-secondary-100
+           hover:bg-secondary-300/90 dark:hover:bg-secondary-600/90
+           active:bg-secondary-400/90 dark:active:bg-secondary-500/90;
+  }
+  
+  .memory-button {
+    @apply calculator-button bg-accent-200/90 dark:bg-accent-700/90
+           text-accent-800 dark:text-accent-100
+           hover:bg-accent-300/90 dark:hover:bg-accent-600/90
+           active:bg-accent-400/90 dark:active:bg-accent-500/90;
+  }
+  
+  .calculator-display {
+    @apply font-semibold text-right px-4 py-2 rounded-lg bg-white/50 dark:bg-gray-800/50
+           backdrop-blur-sm text-gray-800 dark:text-white
+           border border-gray-200 dark:border-gray-700;
+  }
+}
